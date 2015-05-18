@@ -213,134 +213,23 @@
 
                                <a href="http://similartoaboss.github.io/donowvoodoo" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav1-Home', '/home/']);">Home</a>
 
-                               <div class="kqed-navbar-secondary">
-
-                                       <a class="bu-close" href="#">Close</a>
 
 
-
-                                                       <!-- NAV PANEL: /home -->
-<div class="sectionWrap">
-       <div class="section tools cfix">
-               <ul class="cfix">
-                       <li class="link-listen"><a href="http://www.kqed.org/radio/listen/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/radio/listen/']);">Listen Live</a></li>
-                       <li class="link-events"><a href="http://www.kqed.org/events/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/events/']);">Events</a></li>
-                       <li class="link-podcasts"><a href="http://www.kqed.org/video-audio/podcasts/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/video-audio/podcasts/']);">Podcasts</a></li>
-                       <li class="link-rss"><a href="http://www.kqed.org/community/rss/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/community/rss/']);">RSS</a></li>
-                       <li class="link-blogs"><a href="http://www.kqed.org/community/blogs/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/community/blogs/']);">Blogs</a></li>
-                       <li class="link-mobile"><a href="http://www.kqed.org/community/mobile/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/community/mobile/']);">Mobile</a></li>
-                       <li class="link-video"><a href="http://www.kqed.org/video-audio/video/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/video-audio/video/']);">Video</a></li>
-                       <li class="link-newsletters"><a href="http://www.kqed.org/community/newsletters/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/community/newsletters/']);">Newsletters</a></li>
-                       <li class="link-social"><a href="http://www.kqed.org/community/socialmedia.jsp" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Home', '/community/socialmedia.jsp']);">Social Media</a></li>
-               </ul>
-       </div>
-</div>
-
-
-<div class="sectionWrap">
-       <div class="section dontMiss cfix">
-           <h4>Don't Miss:</h4>
-           <ul class="cfix">
-           </ul>
-       </div>
-
-       <script type="text/javascript">
-               jQuery(document).ready(function($){
-                       if ( window.XDomainRequest ) {
-                           jQuery.ajaxTransport(function( s ) {
-                               if ( s.crossDomain && s.async ) {
-                                   if ( s.timeout ) {
-                                       s.xdrTimeout = s.timeout;
-                                       delete s.timeout;
-                                   }
-                                   var xdr;
-                                   return {
-                                       send: function( _, complete ) {
-                                           function callback( status, statusText, responses, responseHeaders ) {
-                                               xdr.onload = xdr.onerror = xdr.ontimeout = jQuery.noop;
-                                               xdr = undefined;
-                                               complete( status, statusText, responses, responseHeaders );
-                                           }
-                                           xdr = new XDomainRequest();
-                                           xdr.onload = function() {
-                                               callback( 200, "OK", { text: xdr.responseText }, "Content-Type: " + xdr.contentType );
-                                           };
-                                           xdr.onerror = function() {
-                                               callback( 404, "Not Found" );
-                                           };
-                                           xdr.onprogress = jQuery.noop;
-                                           xdr.ontimeout = function() {
-                                               callback( 0, "timeout" );
-                                           };
-                                           xdr.timeout = s.xdrTimeout || Number.MAX_VALUE;
-                                           xdr.open( s.type, s.url );
-                                           xdr.send( ( s.hasContent && s.data ) || null );
-                                       },
-                                       abort: function() {
-                                           if ( xdr ) {
-                                               xdr.onerror = jQuery.noop;
-                                               xdr.abort();
-                                           }
-                                       }
-                                   };
-                               }
-                           });
-                       }
-
-               $.ajax({
-                   url: "//www.kqed.org/webapi/v1/dontmiss.json",
-                   data: {
-                       "display" : 5,
-                       "location" : "HOME"
-                   },
-                   dataType: "json",
-                   crossDomain: true,
-                   success: function(highlights){
-                       // this code runs multiple times for multiple UL's, code below tries to work around that
-
-                       // filter and get only the UL's that don't have items
-                       $("div.dontMiss ul.cfix").each( function( indexa, ul ){
-                               if( $(ul).children("li").length == 0 ){
-                                               // then add each highlight to each list with no items
-                                               $.each( highlights, function( indexb, highlight ){
-                                                       $(ul).append( '<li><a href="' + highlight.url + '">' + highlight.title + '</a></li>' );
-                                       });
-                               }
-                       });
-                   }
-               });
-           });
-       </script>
-</div>
-
-
-
-
-                               </div>
-
-                       </li>
-
-
-
-                       <li class="nav-radio">
-
-                               <a href="http://www.kqed.org/radio/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav1-Radio', '/radio/']);">Radio</a>
+                       <li class="nav-contact">
 
                                <div class="kqed-navbar-secondary">
 
-                                       <a class="bu-close" href="#">Close</a>
+                                       <a class="bu-close" href="#">Contact</a>
 
 
 
-                                                       <!-- NAV PANEL: /radio -->
+                                                       <!-- NAV PANEL: /contact -->
 <div class="sectionWrap">
        <div class="section mainSec cfix">
-               <h1><a href="http://www.kqed.org/radio/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/']);">Radio <span>Main Page</span></a></h1>
+               <h1><a href="http://www.kqed.org/radio/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/']);">Contact <span>Us</span></a></h1>
                <ul>
-                       <li class="link-listen"><a href="http://www.kqed.org/radio/listen/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/listen/']);">Listen Live</a></li>
-                       <li><a href="http://www.kqed.org/radio/programs/audio-archives.jsp" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/programs/audio-archives.jsp']);">Audio Archives</a></li>
-                       <li><a href="http://www.kqed.org/radio/about/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/about/']);">About KQED Radio</a></li>
-                       <li><a href="http://www.kqed.org/radio/help/" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/help/']);">Radio Help</a></li>
+                       <li class="link-listen"><a href="www.coppellisd.com/newtech" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/listen/']);">www.coppellisd.com</a></li>
+                       <li><a href="https://twitter.com/search?f=realtime&q=%23boydbence&src=typd" onClick="_gaq.push(['_trackEvent', 'Nav Bar', 'Nav2-Radio', '/radio/programs/audio-archives.jsp']);">#boydbence</a></li>
                </ul>
        </div>
 </div>
